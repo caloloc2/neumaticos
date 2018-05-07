@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Neumaticos</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+	<form id="formulario">
+		<figure><img src="img/logotipo.png" alt=""></figure>
+		<h1>An&aacute;lisis de Neum&aacute;ticos</h1>
+		<input type="text" placeholder="Nombre del Propietario del Veh&iacute;culo" required="true" id="propietario">
+		<input type="text" placeholder="N&uacute;mero de Placa" required="true" id="placa">
+		<input type="number" step="1" min="1" max="8" placeholder="N&uacute;m. Llantas" required="true" id="num_llantas">
+		
+		<input type="submit" value="Iniciar An&aacute;lisis">
+	</form>
+
+	<form id="analisis">
+		<figure><img src="img/logotipo.png" alt=""></figure>
+		<h1 class="titulo">An&aacute;lisis 1 neum&aacute;tico</h1>
+		<input type="button" value="Empezar" id="empezar">
+
+		<div class="cargando">
+			<figure><img src="img/cargando.gif" alt=""></figure>
+			<p>Analizando im&aacute;genes de neum&aacute;tico y obteniendo datos del sensor...</p>
+		</div>
+
+		<input type="button" value="Cancelar" id="cancelar">
+	</form>
+
+	<div id="reporte">
+		<div class="cabeza">			
+			<h1>Reporte de An&aacute;lisis</h1>
+
+			<p class="propietario">Nombre del Propietario: ---</p>
+			<p class="placa">Placa: ---</p>
+			<p class="num_llantas">N&uacute;mero de Llantas: ---</p>
+		</div>
+		
+		<ul class="cuerpo" id="llantas">
+		
+		</ul>
+
+		<input type="button" value="Imprimir Reporte" id="imprimir">
+		<input type="button" value="Iniciar Nuevo An&aacute;lisis" id="nuevo">
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

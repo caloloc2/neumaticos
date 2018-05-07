@@ -1,0 +1,148 @@
+oscuro = #226C8A
+claro = #2F7A92
+
+* 
+	margin 0
+	padding 0
+	font-family 'Verdana'
+	font-size 15px
+
+body
+	padding 3em
+
+	#reporte
+		width 900px
+		margin 0 auto
+		padding 1em 1em 3em 1em
+		display none
+		
+		.cabeza 
+			text-align left 
+			
+			figure, h1 
+				display inline-block 
+				vertical-align middle
+					
+			figure
+				width 30px 
+				
+				img 
+					width 100%
+			
+			h1 
+				font-size 20px 
+				padding 0.5em 0
+				
+			p 
+				font-size 13px 
+				color #333
+				padding 0.15em 2.7em
+		
+		.cuerpo 
+			list-style none
+			padding 1em 0
+
+			.item 
+				display block 
+				padding 1em 2em 				
+				width 100%
+				border-bottom 1px solid rgba(0,0,0,0.1)
+				
+				h2 
+					padding 0.7em 0
+					color #333
+				
+				.imagenes, .informacion
+					display inline-block
+					vertical-align top
+					
+					figure 
+						width 200px
+						display inline-block
+						vertical-align top
+						
+						img 
+							width 100%
+				
+				.informacion
+					padding 0 1em
+					
+					p 
+						display block 
+						font-size 13px
+						color #666
+					
+					p:last-child
+						color #222
+						font-weight bold
+						padding 0.5em 0
+			
+			.item:last-child
+				border-bottom 0
+		
+		input
+			width 200px
+			margin 1em 0 0 0
+			padding 0.5em 1em
+			border 1px solid rgba(0,0,0,0.1)
+			background claro
+			color white
+			cursor pointer
+			display inline-block
+			vertical-align top 
+	
+	form
+		padding 2em 1em
+		border 1px solid rgba(0,0,0,0.1)
+		border-radius 0.3em
+		width 400px
+		margin 0 auto
+		text-align center
+		-webkit-box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.66);
+		-moz-box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.66);
+		box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.66);
+		
+		h1 
+			padding 1em 0
+			font-size 20px 
+			color #555
+
+		.cargando
+			text-align center
+			display none
+			padding 1em 0
+			
+			figure
+				width 50px
+				margin 0 auto
+				
+				img 
+					width 100%
+			
+			p 
+				font-size 10px 
+				color #777
+
+		input
+			display block 
+			width 95%
+			margin 0.5em 0
+			border 1px solid rgba(0,0,0,0.1)
+			padding 0.7em 0.6em
+
+		input[type='submit'], input[type='button']
+			width 100%
+			margin 1em 0 0 0
+			background claro
+			color white
+			cursor pointer
+			border-radius 0.3em
+		
+		input[type='submit']:hover
+			background oscuro
+		
+		input[type='button']:hover
+			background oscuro	
+		
+	#analisis
+		display none
