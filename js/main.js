@@ -133,7 +133,7 @@ function Reporte(){
 		item += '</div>';
 
 		item += '<div class="informacion">';
-		item += '<p>Valor del Sensor: '+reporte[x]['sensor']+'</p>';
+		item += '<p>Medida Obtenida: '+reporte[x]['sensor']+' mm</p>';
 		item += '<p>Valor de An&aacute;lisis: '+reporte[x]['valor_imagen']+'</p>';
 		item += '<p class="resultado">Neum&aacute;tico en excelente estado.</p>';
 		item += '</div>';
