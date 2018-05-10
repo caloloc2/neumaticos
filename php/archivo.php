@@ -8,7 +8,7 @@ try{
 	fwrite($fp, "1");	
 	fclose($fp);
 
-	sleep(4); // espera durante 4 segundos hasta que lea el sensor, tome la imagen y la analice
+	sleep(2.5); // espera durante 4 segundos hasta que lea el sensor, tome la imagen y la analice
 
 	// lee dato del sensor
 	$fp = fopen("archivo.txt", "r");

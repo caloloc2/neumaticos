@@ -115,9 +115,9 @@ $('#imprimir').click(function(){
 function Reporte(){
 
 
-	$('#reporte .cabeza .propietario').html('Nombre del Propietario: '+propietario);
-	$('#reporte .cabeza .placa').html('Placa: '+placa);
-	$('#reporte .cabeza .num_llantas').html('N&uacute;mero de llantas: '+num_llantas);
+	$('#reporte .cabeza .title .propietario').html('Nombre del Propietario: '+propietario);
+	$('#reporte .cabeza .title .placa').html('Placa: '+placa);
+	$('#reporte .cabeza .title .num_llantas').html('N&uacute;mero de llantas: '+num_llantas);
 	console.log(reporte);
 
 	for (x=0; x<num_llantas; x++){
@@ -128,6 +128,7 @@ function Reporte(){
 
 		item += '<div class="imagenes">';
 		item += '<figure><img src="llantas/foto_'+(x+1)+'.jpg" alt=""></figure>';
+		item += '<figure><img src="llantas/gris_'+(x+1)+'.jpg" alt=""></figure>';
 		item += '<figure><img src="llantas/proc_'+(x+1)+'.jpg" alt=""></figure>';
 		item += '</div>';
 

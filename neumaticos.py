@@ -13,12 +13,13 @@ while(True):
 
 		if (file_count==0):
 			numero_archivo = 1
-		elif (file_count==2):		
+		elif (file_count==3):
 			numero_archivo = 2
-		elif (file_count>2):
-			numero_archivo = (file_count / 2)+1  # obtiene el numero de imagen que tocaria
+		elif (file_count>3):
+			numero_archivo = (file_count / 3)+1  # obtiene el numero de imagen que tocaria
 		foto_normal = "foto_"+str(numero_archivo)+".jpg"
 		foto_procesada = "proc_"+str(numero_archivo)+".jpg"
+		foto_gris = "gris_"+str(numero_archivo)+".jpg"
 
 		camara = 0
 		fotogramas = 30
@@ -41,12 +42,13 @@ while(True):
 		image = cv2.imread(file)
 		# convierte la imagen a escala de grises
 		gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+		cv2.imwrite(directorio+foto_gris, gray_image)
 		# difumina la imagen
 		blur = cv2.blur(gray_image,(5,5),0)
 		# encuentra los border que encuentre en la imagen
 		edges = cv2.Canny(blur,100,150)
 		# crea la imagen convertida
-		cv2.imwrite(directorio+foto_procesada,edges)
+		cv2.imwrite(directorio+foto_procesada, edges)
 
 		hist_full = cv2.calcHist([edges],[0],None,[256],[0,256])
 
