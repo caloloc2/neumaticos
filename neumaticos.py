@@ -1,5 +1,10 @@
-import cv2, os, time
+import cv2, os, time, serial
 directorio = 'llantas/'
+
+port = serial.Serial("/dev/ttyAMA0", baudrate = 9600, timeout = 2)
+port.close()
+port.open()
+time.sleep(3)
 
 while(True):
 	archivo = open("php/inicia_camara.txt", "r")
@@ -56,6 +61,14 @@ while(True):
 		f = open ('php/imagen.txt','w')
 		f.write(str(hist_full[0])+"-"+str(hist_full[255]))
 		f.close()
+
+
+		# recibe el dato del sensor
+		rcv = readlineCR(port)
+		f = open ('php/sensor.txt','w')
+		f.write(str(rcv))
+		f.close()
+
 	else:
 		print("esperando confirmacion...")
 	
