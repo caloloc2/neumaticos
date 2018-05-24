@@ -65,12 +65,13 @@ while(True):
 		f.close()
 
 		port.open()
-		rcv='';
+		rcv=''
 		while (rcv==''):
 			# recibe el dato del sensor
 			rcv = port.readline()
 			time.sleep(0.5)			
 		port.close()
+		print("recibido: ")
 		print(rcv)
 		
 		f = open ('php/sensor.txt','w')
