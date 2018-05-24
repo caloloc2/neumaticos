@@ -69,13 +69,15 @@ while(True):
 		while (rcv==''):
 			# recibe el dato del sensor
 			rcv = port.readline()
-			time.sleep(0.5)
+			time.sleep(0.2)
 		port.close()
 		
 		f = open ('php/sensor.txt','w')
 		f.write(str(rcv))
 		f.close()
 
+		time.sleep(1)
+		
 	else:
 		print("esperando confirmacion...")
 	
