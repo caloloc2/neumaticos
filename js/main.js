@@ -54,19 +54,23 @@ $('#empezar').click(function(){
 			}
 		});
 
+		setTimeout(function(){
+			// espera
+		}, 20000)
+
 		if (llanta_actual<num_llantas){
 			setTimeout(function(){
 				llanta_actual++;
 				$('#empezar').show();
 				$('.cargando').hide();
 				Pasos(llanta_actual, 0);
-			}, 35000)
+			}, 10000)
 		}else{
 			$('#analisis .titulo').html('Generando reporte de resultados...');
 			setTimeout(function(){
 				Pasos(llanta_actual, 1);			
 				$('#reporte').show();	
-			}, 35000)
+			}, 10000)
 		}
 	}, 1500)
 })
