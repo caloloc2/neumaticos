@@ -69,7 +69,7 @@ while(True):
 		while (rcv==''):
 			# recibe el dato del sensor
 			rcv = port.readline()
-			time.sleep(0.5)			
+			time.sleep(0.8)			
 		port.close()
 		print("recibido: ")
 		print(rcv)
