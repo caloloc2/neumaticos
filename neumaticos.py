@@ -5,7 +5,7 @@ directorio = 'llantas/'
 port = serial.Serial("/dev/ttyS0", baudrate = 9600, timeout = 2)
 port.close()
 port.open()
-time.sleep(3) # tiempo de espera 
+time.sleep(2) # tiempo de espera 
 port.close()
 
 while(True):
@@ -78,6 +78,6 @@ while(True):
 		f.write(str(rcv))
 		f.close()
 
-		time.sleep(1)
+		time.sleep(0.5)
 	
-	time.sleep(1)
+	time.sleep(0.3)
