@@ -60,13 +60,13 @@ $('#empezar').click(function(){
 				$('#empezar').show();
 				$('.cargando').hide();
 				Pasos(llanta_actual, 0);
-			}, 30000)
+			}, 35000)
 		}else{
 			$('#analisis .titulo').html('Generando reporte de resultados...');
 			setTimeout(function(){
 				Pasos(llanta_actual, 1);			
 				$('#reporte').show();	
-			}, 30000)
+			}, 35000)
 		}
 	}, 1500)
 })
@@ -141,6 +141,8 @@ function Reporte(){
 			item += '<p class="resultado">Neum&aacute;tico en estado medio.</p>';
 		}else if ((reporte[x]['sensor']>=6)&&(reporte[x]['sensor']<=10)) {
 			item += '<p class="resultado">Neum&aacute;tico en buen estado.</p>';
+		}else{
+			item += '<p class="resultado">Valor no medible.</p>';
 		}
 		item += '</div>';
 		item += '</li>';
