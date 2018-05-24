@@ -14,13 +14,17 @@ try{
 	fwrite($fp, "0");	
 	fclose($fp);
 
-	/*$fp = fopen("archivo.txt", "w");
+	$fp = fopen("archivo.txt", "w");
 	fwrite($fp, "0");	
 	fclose($fp);
 
 	$fp = fopen("imagen.txt", "w");
 	fwrite($fp, "0");	
-	fclose($fp);*/
+	fclose($fp);
+
+	$fp = fopen("sensor.txt", "w");
+	fwrite($fp, "0");
+	fclose($fp);
 
 	$respuesta['estado'] = true;
 }catch(Exception $e){

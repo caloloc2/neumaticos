@@ -1,4 +1,5 @@
 <?php 
+include('borrar_fotos.php');
 
 $respuesta['estado'] = false;
 
