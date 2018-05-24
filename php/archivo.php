@@ -1,5 +1,4 @@
 <?php 
-include('borrar_fotos.php');
 
 $respuesta['estado'] = false;
 
@@ -26,7 +25,7 @@ try{
 	fwrite($fp, "0");	
 	fclose($fp);
 
-	sleep(2);
+	sleep(1);
 
 	$respuesta['estado'] = true;
 }catch(Exception $e){

@@ -5,6 +5,10 @@ var llanta_actual = 1;
 
 var reporte = [];
 
+$(document).ready(function(){
+	Reiniciar();
+})
+
 $('#formulario').submit(function(){
 	propietario = document.getElementById('propietario').value;
 	placa = document.getElementById('placa').value;
