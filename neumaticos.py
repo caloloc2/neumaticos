@@ -1,10 +1,10 @@
 import cv2, os, time, serial
 directorio = 'llantas/'
 
-port = serial.Serial("/dev/ttyAMA0", baudrate = 9600, timeout = 2)
+port = serial.Serial("/dev/ttyS0", baudrate = 9600, timeout = 2)
 port.close()
 port.open()
-time.sleep(3)
+time.sleep(3) # tiempo de espera 
 
 while(True):
 	archivo = open("php/inicia_camara.txt", "r")
@@ -64,7 +64,7 @@ while(True):
 
 
 		# recibe el dato del sensor
-		rcv = readlineCR(port)
+		rcv = readline()
 		f = open ('php/sensor.txt','w')
 		f.write(str(rcv))
 		f.close()
