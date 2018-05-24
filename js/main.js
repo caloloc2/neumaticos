@@ -135,7 +135,13 @@ function Reporte(){
 		item += '<div class="informacion">';
 		item += '<p>Medida Obtenida: '+reporte[x]['sensor']+' mm</p>';
 		item += '<p>Valor de An&aacute;lisis: '+reporte[x]['valor_imagen']+'</p>';
-		item += '<p class="resultado">Neum&aacute;tico en excelente estado.</p>';
+		if ((reporte[x]['sensor']>=1)&&(reporte[x]['sensor']<=2.99)){
+			item += '<p class="resultado">Neum&aacute;tico en mal estado.</p>';			
+		}else if ((reporte[x]['sensor']>=3)&&(reporte[x]['sensor']<=5.99)) {
+			item += '<p class="resultado">Neum&aacute;tico en estado medio.</p>';
+		}else if ((reporte[x]['sensor']>=6)&&(reporte[x]['sensor']<=10)) {
+			item += '<p class="resultado">Neum&aacute;tico en buen estado.</p>';
+		}
 		item += '</div>';
 		item += '</li>';
 

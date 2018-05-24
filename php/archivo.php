@@ -11,7 +11,7 @@ try{
 	sleep(3.5); // espera durante 4 segundos hasta que lea el sensor, tome la imagen y la analice
 
 	// lee dato del sensor
-	$fp = fopen("archivo.txt", "r");
+	$fp = fopen("sensor.txt", "r");
 	$respuesta['sensor'] = fgets($fp);
 	fclose($fp);
 
