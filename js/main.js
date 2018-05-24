@@ -60,13 +60,13 @@ $('#empezar').click(function(){
 				$('#empezar').show();
 				$('.cargando').hide();
 				Pasos(llanta_actual, 0);
-			}, 16000)
+			}, 30000)
 		}else{
 			$('#analisis .titulo').html('Generando reporte de resultados...');
 			setTimeout(function(){
 				Pasos(llanta_actual, 1);			
 				$('#reporte').show();	
-			}, 16000)
+			}, 8000)
 		}
 	}, 3000)
 })
