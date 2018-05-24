@@ -66,9 +66,9 @@ $('#empezar').click(function(){
 			setTimeout(function(){
 				Pasos(llanta_actual, 1);			
 				$('#reporte').show();	
-			}, 8000)
+			}, 30000)
 		}
-	}, 3000)
+	}, 1500)
 })
 
 $('#nuevo').click(function(){
