@@ -1,31 +1,32 @@
 import cv2
 import os, time, serial
 import RPi.GPIO as GPIO
+
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(2, GPIO.OUT) ## GPIO 2 como salida
+GPIO.setup(18, GPIO.OUT) ## GPIO 18 como salida
 
 directorio = 'llantas/'
 
-GPIO.output(2, True) ## Enciendo el 2
+GPIO.output(18, True) ## Enciendo el 2
 port = serial.Serial("/dev/ttyS0", baudrate = 9600, timeout = 2)
 port.close()
 port.open()
-time.sleep(2) # tiempo de espera 
+time.sleep(18) # tiempo de espera 
 port.close()
-GPIO.output(2, False) ## Enciendo el 2
+GPIO.output(18, False) ## Enciendo el 2
 
 
-GPIO.output(2, True) ## Enciendo el 2
+GPIO.output(18, True) ## Enciendo el 2
 time.sleep(0.5)
-GPIO.output(2, False) ## Enciendo el 2
+GPIO.output(18, False) ## Enciendo el 2
 time.sleep(0.5)
-GPIO.output(2, True) ## Enciendo el 2
+GPIO.output(18, True) ## Enciendo el 2
 time.sleep(0.5)
-GPIO.output(2, False) ## Enciendo el 2
+GPIO.output(18, False) ## Enciendo el 2
 time.sleep(0.5)
-GPIO.output(2, True) ## Enciendo el 2
+GPIO.output(18, True) ## Enciendo el 2
 time.sleep(0.5)
-GPIO.output(2, False) ## Enciendo el 2
+GPIO.output(18, False) ## Enciendo el 2
 time.sleep(0.5)
 
 while(True):
@@ -34,7 +35,7 @@ while(True):
 	archivo.close() 
 	
 	if (inicia=='1'):	
-		GPIO.output(2, True) ## Enciendo el 2	
+		GPIO.output(18, True) ## Enciendo el 2	
 		path, dirs, files = next(os.walk(directorio))
 		file_count = len(files)
 		numero_archivo = 1
@@ -100,6 +101,6 @@ while(True):
 		f.close()
 
 		time.sleep(0.5)
-		GPIO.output(2, False) ## Enciendo el 2
+		GPIO.output(18, False) ## Enciendo el 2
 	
 	time.sleep(0.3)
