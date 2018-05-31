@@ -86,8 +86,10 @@ while(True):
 		f = open ('php/imagen.txt','w')
 		f.write(str(hist_full[0])+"-"+str(hist_full[255]))
 		f.close()
+		print("Imagen procesada y guardada.")
 
 		GPIO.output(23, True)
+		time.sleep(2)
 		port.open()
 		rcv=''
 		while (rcv==''):
@@ -95,7 +97,7 @@ while(True):
 			rcv = port.readline()
 			time.sleep(0.8)			
 		port.close()
-		print("recibido: ")
+		print("Dato Recibido: ")
 		print(rcv)
 		GPIO.output(23, False)
 		

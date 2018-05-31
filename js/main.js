@@ -80,7 +80,7 @@ $('#empezar').click(function(){
 })
 
 $('#nuevo').click(function(){
-	Reiniciar();
+	window.location.href = 'index.html';
 })
 
 $('#cancelar').click(function(){
