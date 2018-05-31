@@ -60,7 +60,7 @@ $('#empezar').click(function(){
 
 		setTimeout(function(){
 			// espera
-		}, 20000)
+		}, 23000)
 
 		if (llanta_actual<num_llantas){
 			setTimeout(function(){
@@ -68,13 +68,13 @@ $('#empezar').click(function(){
 				$('#empezar').show();
 				$('.cargando').hide();
 				Pasos(llanta_actual, 0);
-			}, 10000)
+			}, 12000)
 		}else{
 			$('#analisis .titulo').html('Generando reporte de resultados...');
 			setTimeout(function(){
 				Pasos(llanta_actual, 1);			
 				$('#reporte').show();	
-			}, 10000)
+			}, 12000)
 		}
 	}, 1500)
 })
