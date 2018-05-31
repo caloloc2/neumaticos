@@ -4,6 +4,7 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT) ## GPIO 18 como salida
+GPIO.setup(23, GPIO.OUT) ## GPIO 18 como salida
 
 directorio = 'llantas/'
 
@@ -35,7 +36,7 @@ while(True):
 	archivo.close() 
 	
 	if (inicia=='1'):	
-		GPIO.output(18, True) ## Enciendo el 2	
+		GPIO.output(18, True)
 		path, dirs, files = next(os.walk(directorio))
 		file_count = len(files)
 		numero_archivo = 1
@@ -86,6 +87,7 @@ while(True):
 		f.write(str(hist_full[0])+"-"+str(hist_full[255]))
 		f.close()
 
+		GPIO.output(23, True)
 		port.open()
 		rcv=''
 		while (rcv==''):
@@ -95,6 +97,7 @@ while(True):
 		port.close()
 		print("recibido: ")
 		print(rcv)
+		GPIO.output(23, False)
 		
 		f = open ('php/sensor.txt','w')
 		f.write(str(rcv))
