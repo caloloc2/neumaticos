@@ -44,6 +44,7 @@ $('#empezar').click(function(){
 			dataType: 'json',
 			async: false,
 			success: function(datos) {
+				console.log(datos);
 				if (datos['estado']){
 					var llanta = {
 						num_llanta: llanta_actual,
