@@ -106,7 +106,7 @@ while(True):
 		f.write(str(rcv))
 		f.close()
 
-		time.sleep(0.5)
+		time.sleep(1.5)
 		GPIO.output(18, False) ## Enciendo el 2
 	
 	time.sleep(0.3)
