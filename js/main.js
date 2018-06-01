@@ -47,7 +47,7 @@ $('#empezar').click(function(){
 				if (datos['estado']){
 					var llanta = {
 						num_llanta: llanta_actual,
-						sensor : parseFloat(datos['sensor']),
+						sensor : datos['sensor'],
 						valor_imagen : datos['imagen']
 					};
 					reporte.push(llanta);					
