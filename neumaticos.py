@@ -35,7 +35,8 @@ while(True):
 	inicia = archivo.read()
 	archivo.close() 
 	
-	if (inicia=='1'):	
+	if (inicia=='1'):
+		os.system('clear')
 		GPIO.output(18, True)
 		print("Proceso iniciado...")
 		path, dirs, files = next(os.walk(directorio))
@@ -98,8 +99,7 @@ while(True):
 			rcv = port.readline()
 			time.sleep(0.8)
 		port.close()
-		print("Dato Recibido: ")
-		print(rcv)
+		print("Dato Recibido: ", rcv)
 		GPIO.output(23, False)
 		
 		f = open ('php/sensor.txt','w')
