@@ -37,6 +37,7 @@ while(True):
 	
 	if (inicia=='1'):	
 		GPIO.output(18, True)
+		print("Proceso iniciado...")
 		path, dirs, files = next(os.walk(directorio))
 		file_count = len(files)
 		numero_archivo = 1
