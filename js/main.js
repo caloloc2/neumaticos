@@ -148,7 +148,7 @@ function Reporte(){
 			item += '<p class="resultado">Neum&aacute;tico en mal estado.</p>';			
 		}else if ((reporte[x]['sensor']>=3)&&(reporte[x]['sensor']<=5.99)) {
 			item += '<p class="resultado">Neum&aacute;tico en estado medio.</p>';
-		}else if ((reporte[x]['sensor']>=6)&&(reporte[x]['sensor']<=10)) {
+		}else if (reporte[x]['sensor']>=6) {
 			item += '<p class="resultado">Neum&aacute;tico en buen estado.</p>';
 		}else{
 			item += '<p class="resultado">Valor no medible.</p>';
