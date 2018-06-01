@@ -56,6 +56,34 @@ while(True):
 		camara = 0
 		fotogramas = 30
 
+		# LECTURA DE SENSOR
+
+		f = open ('php/sensor.txt','w')
+		f.write("")
+		f.close()
+
+		GPIO.output(23, True)
+		time.sleep(2)	
+		port.open()
+		rcv=''
+		while (rcv==''):
+			# recibe el dato del sensor
+			rcv = port.readline()
+			time.sleep(0.8)
+		port.close()
+		print("Dato Recibido: ", rcv)
+		GPIO.output(23, False)
+		
+		f = open ('php/sensor.txt','w')
+		f.write(str(rcv))
+		f.close()
+
+		time.sleep(1.5)
+		GPIO.output(18, False) ## Enciendo el 2
+
+
+		# LECTURA DE FOTOGRAFIA
+
 		#iniciar camara
 		camera = cv2.VideoCapture(camara)
 		# Captura imagen  camara
@@ -90,23 +118,4 @@ while(True):
 		f.close()
 		print("Imagen procesada y guardada.")
 
-		GPIO.output(23, True)
-		time.sleep(2)	
-		port.open()
-		rcv=''
-		while (rcv==''):
-			# recibe el dato del sensor
-			rcv = port.readline()
-			time.sleep(0.8)
-		port.close()
-		print("Dato Recibido: ", rcv)
-		GPIO.output(23, False)
-		
-		f = open ('php/sensor.txt','w')
-		f.write(str(rcv))
-		f.close()
-
-		time.sleep(1.5)
-		GPIO.output(18, False) ## Enciendo el 2
-	
 	time.sleep(0.3)
