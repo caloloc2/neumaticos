@@ -8,14 +8,14 @@ try{
 	fwrite($fp, "1");	
 	fclose($fp);
 
-	sleep(5.5); // espera durante 4 segundos hasta que lea el sensor, tome la imagen y la analice
+	sleep(6); // espera durante 4 segundos hasta que lea el sensor, tome la imagen y la analice
 
 	// guarda un 0 en el archivo para detener la lectura en la raspberry
 	$fp = fopen("inicia_camara.txt", "w");
 	fwrite($fp, "0");	
 	fclose($fp);
 
-	sleep(2);
+	sleep(3);
 
 	// lee dato del sensor
 	$fp = fopen("sensor.txt", "r");
