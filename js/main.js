@@ -68,15 +68,15 @@ $('#empezar').click(function(){
 				$('#empezar').show();
 				$('.cargando').hide();
 				Pasos(llanta_actual, 0);
-			}, 10000)
+			}, 15000)
 		}else{
 			$('#analisis .titulo').html('Generando reporte de resultados...');
 			setTimeout(function(){
 				Pasos(llanta_actual, 1);			
 				$('#reporte').show();	
-			}, 10000)
+			}, 15000)
 		}
-	}, 1500)
+	}, 3000)
 })
 
 $('#nuevo').click(function(){
