@@ -88,8 +88,7 @@ while(True):
 		f.close()
 		print("Imagen procesada y guardada.")
 
-		GPIO.output(23, True)
-		time.sleep(1.5)
+		GPIO.output(23, True)		
 		port.open()
 		rcv=''
 		while (rcv==''):
