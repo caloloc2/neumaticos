@@ -76,7 +76,7 @@ $('#empezar').click(function(){
 				$('#reporte').show();	
 			}, 15000)
 		}
-	}, 3000)
+	}, 500)
 })
 
 $('#nuevo').click(function(){
