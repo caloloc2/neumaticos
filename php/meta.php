@@ -146,15 +146,15 @@ class Meta
      * @param $edad         nueva descripcion 
      * @return PDOStatement
      */
-    public static function Nuevo_Valor($id_cliente, $num_llanta, $sensor, $camara, $foto)
+    public static function Nuevo_Valor($id_cliente, $num_llanta, $sensor, $camara, $foto, $gris, $proc)
     {
         // Sentencia INSERT        
-        $comando = "INSERT INTO valores (id_cliente, num_llanta, sensor, camara, foto) VALUES (?,?,?,?,?)";
+        $comando = "INSERT INTO valores (id_cliente, num_llanta, sensor, camara, foto_normal, foto_gris, foto_procesada) VALUES (?,?,?,?,?,?,?)";
 
         // Preparar la sentencia
         $sentencia = Database::getInstance()->getDb()->prepare($comando);
 
-        return $sentencia->execute(array($id_cliente, $num_llanta, $sensor, $camara, $foto));
+        return $sentencia->execute(array($id_cliente, $num_llanta, $sensor, $camara, $foto, $gris, $proc));
 
     }
 }

@@ -17,11 +17,14 @@ try{
 	if ($id['id_cliente']!=''){
 		
 		$id_cliente = $id['id_cliente'];
-		$foto = 
+		$foto = '../llantas/foto_'.$linea['num_llanta'];
+		$gris = '../llantas/gris_'.$linea['num_llanta'];
+		$proc = '../llantas/proc_'.$linea['num_llanta'];
 		
 		foreach ($valores as $linea) {
-			$nuevo_valor = Meta::Nuevo_Valor($id_cliente, $linea['num_llanta'], $linea['sensor'], $linea['valor_imagen'], $foto);
+			$nuevo_valor = Meta::Nuevo_Valor($id_cliente, $linea['num_llanta'], $linea['sensor'], $linea['valor_imagen'], $foto, $gris, $proc);
 		}
+		
 	}else{
 		$respuesta['error'] = "Error al guardar el reporte.";
 	}
