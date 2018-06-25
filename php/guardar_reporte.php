@@ -17,13 +17,16 @@ try{
 	if ($id['id_cliente']!=''){
 		
 		$id_cliente = $id['id_cliente'];
-		$foto = '../llantas/foto_'.$linea['num_llanta'];
-		$gris = '../llantas/gris_'.$linea['num_llanta'];
-		$proc = '../llantas/proc_'.$linea['num_llanta'];
 		
 		foreach ($valores as $linea) {
+			$foto = file_get_contents('../llantas/foto_'.$linea['num_llanta'].'.jpg');
+			$gris = file_get_contents('../llantas/gris_'.$linea['num_llanta'].'.jpg');
+			$proc = file_get_contents('../llantas/proc_'.$linea['num_llanta'].'.jpg');
+			
 			$nuevo_valor = Meta::Nuevo_Valor($id_cliente, $linea['num_llanta'], $linea['sensor'], $linea['valor_imagen'], $foto, $gris, $proc);
 		}
+
+		$respuesta['estado'] = true;
 		
 	}else{
 		$respuesta['error'] = "Error al guardar el reporte.";

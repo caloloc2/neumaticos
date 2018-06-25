@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Neumaticos</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+
+	<form class="fechas" id="buscar">
+		<figure><img src="img/logo-utn.png" alt=""></figure>
+		<h1>Reportes</h1>
+		<input type="date" id="fecha" required="true">
+		<input type="submit" value="Buscar Reportes">
+		<a href="index.html" style="text-decoration: none;"><input type="button" value="Regresar a Inicio" id="regresar"></a>
+	</form>
+
+
+	<table width="800px" border="0" align="center" style="padding: 2em 5em; margin: 0 auto;">
+		<thead>
+			<tr>
+				<td><strong>Fecha</strong></td>
+				<td><strong>Cliente</strong></td>
+				<td><strong>Placa</strong></td>
+				<td><strong># Llantas</strong></td>				
+				<td><strong>Acciones</strong></td>
+			</tr>
+		</thead>
+		<tbody id="listado">
+			
+		</tbody>
+	</table>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/reporte.js"></script>
+</body>
+</html>
