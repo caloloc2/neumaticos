@@ -127,8 +127,7 @@ function Reporte(){
 	$('#reporte .cabeza .title .propietario').html('Nombre del Propietario: '+propietario);
 	$('#reporte .cabeza .title .placa').html('Placa: '+placa);
 	$('#reporte .cabeza .title .num_llantas').html('N&uacute;mero de llantas: '+num_llantas);
-	console.log(reporte);
-
+	
 	for (x=0; x<num_llantas; x++){
 
 		var item = '';
@@ -158,4 +157,27 @@ function Reporte(){
 
 		$('#llantas').append(item);
 	};
+
+	Guardar_Reporte();
+}
+
+function Guardar_Reporte(){
+	$.ajax({
+		url: 'php/guardar_reporte.php',
+		dataType: 'json',
+		async: false,
+		type: "POST",
+		data:{
+			nombres: propietario,
+			placa: placa,
+			llantas: num_llantas,
+			valores: reporte
+		},
+		success: function(datos) {
+			console.log(datos);
+		},
+		error:function(e){
+			console.log(e.responseText);
+		}
+	});
 }
