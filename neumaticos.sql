@@ -31,7 +31,7 @@ CREATE TABLE `clientes` (
   `llantas` int(11) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,11 +47,11 @@ CREATE TABLE `valores` (
   `num_llanta` int(11) DEFAULT NULL,
   `sensor` double DEFAULT NULL,
   `camara` varchar(40) DEFAULT NULL,
-  `foto_normal` blob NOT NULL,
-  `foto_gris` blob NOT NULL,
-  `foto_procesada` blob NOT NULL,
+  `foto_normal` longblob NOT NULL,
+  `foto_gris` longblob NOT NULL,
+  `foto_procesada` longblob NOT NULL,
   PRIMARY KEY (`id_valor`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -63,4 +63,4 @@ CREATE TABLE `valores` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-25 16:11:08
+-- Dump completed on 2018-06-25 18:39:49
