@@ -27,8 +27,9 @@ function Listar_Reportes(){
 						registro += '<td>'+item['fecha']+'</td>';
 						registro += '<td>'+item['nombres']+'</td>';
 						registro += '<td>'+item['placa']+'</td>';
-						registro += '<td>'+item['llantas']+'</td>';
+						registro += '<td align="center">'+item['llantas']+'</td>';
 						registro += '<td><a href="reporte.php?id='+item['id_cliente']+'">Imprimir</a></td>';
+						registro += '<td><a href="#" onclick="Borrar('+item['id_cliente']+'); return false;">Eliminar</a></td>';
 						registro += '</tr>';
 					})
 
@@ -114,3 +115,26 @@ $('#imprimir').click(function(){
 	$('#imprimir').show();
 	$('#regresar').show();
 })
+
+function Borrar(id){
+	$.ajax({
+		url: 'php/eliminar_reportes.php',
+		dataType: 'json',
+		async: false,
+		type: "POST",
+		data:{
+			id_cliente: id
+		},
+		success: function(datos) {
+			console.log(datos);
+			if (datos['estado']){
+				Listar_Reportes();
+			}else{
+				alert("Hubo un error al eliminar el reporte.");
+			}
+		},
+		error:function(e){
+			console.log(e.responseText);
+		}
+	});
+}
